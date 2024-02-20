@@ -1,0 +1,807 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+.wrap {
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;    
+}
+
+.startPage {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: #fff;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(https://kartinki.pics/uploads/posts/2021-03/1616049678_20-p-krutoi-fon-na-pk-21.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 0 0 300px 0;
+}
+
+.startGameBtn {
+    width: 150px;
+    height: 40px;
+    background-color: #31572c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.settingsBtn {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #31572c;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-top: 1px;
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.settingsContainer {
+    position: absolute;
+    display: none;
+    width: 400px;
+    height: 250px;
+    background-color: #132a13;
+    border-radius: 5px;
+    top: 50%;
+    margin-top: -150px;
+    left: 50%;
+    margin-left: -200px;
+    z-index: 99;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 70px 0;
+    box-shadow: 0 2px 10px #999;
+}
+
+.closeSettings {
+    align-self: flex-end;
+    margin-top: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.fa-xmark {
+    font-size: 20px;
+    color: #fff;
+}
+
+.Txtplay {
+    font-size: 18px;
+    color: #fff;
+}
+
+.changeLanguageContainer {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.language {
+    width: 100px;
+    height: 70px;
+    border-radius: 10px;
+}
+
+.uaLanguage {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d2/Flag_of_Ukraine.png);
+    background-position: center;
+    background-size: cover;
+    display: none;
+    border-radius: 10px;
+}
+
+.enLanguage {
+    width: 100%;
+    height: 100%;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Flag_of_the_U.S..svg/1200px-Flag_of_the_U.S..svg.png);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    border-radius: 10px;
+}
+
+.arrowLeft,
+.arrowRight {
+    width: 40px;
+    height: 40px;
+    background-color: #31572c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+}
+
+.palayer1 {
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.palayer2 {
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+    position: relative;
+    top: 50%;
+    margin-top: -50px;
+    left: 50%;
+    margin-left: -50px;
+    opacity: 0.5;
+    background-size: cover;
+    background-position: center;
+}
+
+.target {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border: 5px solid red;
+    border-radius: 50%;
+    position: relative;
+    margin-top: -50px;
+    margin-left: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.target-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.pointBlock {
+    width: 200px;
+    height: 100px;
+    background-color: #999;
+    border-radius: 5px;
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.playerPoint {
+    font-size: 28px;
+    color: #fff;
+}
+
+hr {
+    height: 80px;
+}
+
+.settingsPlayContainer {
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -250px;
+    margin-left: -350px;
+    z-index: 3;
+    background-color: #132a13;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px #999;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.settingsPlayer {
+    width: 48%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 10px 50px 10px;
+}
+
+.settingsPlayHr {
+    height: 500px;
+    width: 5px;
+    background-color: #fff;
+}
+
+#Player1Name {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: #31572c;
+    border: none;
+    color: #fff;
+}
+
+#Player1Name::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#Player1Name:focus {
+    outline: none;
+}
+
+#Player2Name {
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    background-color: #31572c;
+    border: none;
+    color: #fff;
+}
+
+#Player2Name::placeholder {
+    color: rgb(255, 255, 255);
+}
+
+#Player2Name:focus {
+    outline: none;
+}
+
+.Player1Skin {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skinPlayer1Box1 {
+    width: 220px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.skinPlayer1Box2 {
+    width: 220px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.Player2Skin {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skinPlayer2Box1 {
+    width: 220px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.skinPlayer2Box2 {
+    width: 220px;
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.skinPacmen {
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    border: 25px solid transparent;
+    border-left-color: yellow;
+    border-top-color: yellow;
+    border-bottom-color: yellow;
+    animation: eat 1.35s infinite;
+    cursor: pointer;
+}
+
+@keyframes eat {
+
+    0%,
+    20% {
+        border-right-color: yellow;
+    }
+
+    25%,
+    50% {
+        border-right-color: transparent;
+    }
+
+    55%,
+    80% {
+        border-right-color: yellow;
+    }
+
+    85%,
+    100% {
+        border-right-color: transparent;
+    }
+}
+
+.skinAhers {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/color\ picker.jpeg);
+    background-size: 110%;
+    background-position: center;
+    cursor: pointer;
+}
+
+#colorInput1 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+#colorInput2 {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.skinBatmen {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-batman-logo-batman-joker-bat-signal-robin-batman-logo.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinCaptainAmerica {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-captain-america-t-shirt-sticker-wall-decal-captain-america-s-shield-symmetry-world-captain.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinCocaCola {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-clipart-coca-cola-logo-coca-cola-zero-soft-drink-coca-cola-logo-logo-cola.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinStarBucks {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/1200px-starbucks_corporation_logo_2011.svg.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinKnight {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-cartoon-knight-knight-comics-shield-cartoon.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinRobot {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-flat-design-tech-robot-logo-copyright-cartoon.png);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinCosmonaft {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/gratis-png-persona-con-traje-de-astronauta-caricatura-de-astronauta-linda-astronauta.png);
+    background-size: 120%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinMercedes {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-logo-icon-mercedes-icon-symbol-circle-spoke-rim-vehicle-wheel-metal.png);
+    background-size: 115%;
+    background-position: center;
+    cursor: pointer;
+}
+
+.skinBMW {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/png-transparent-bmw-car-logo-bmw-logo-trademark-logo-car.png);
+    background-size: 105%;
+    background-position: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.skinAlfaRomeo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url(./img/Alfa_romeo.svg);
+    background-size: 105%;
+    background-position: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+}
+
+.btn-start-game {
+    padding: 8px 48px;
+    background-color: #31572c;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.selectingGameModeContainer {
+    width: 500px;
+    height: 450px;
+    position: absolute;
+    background-color: #132a13;
+    top: 50%;
+    left: 50%;
+    margin-top: -225px;
+    margin-left: -250px;
+    display: none;
+    z-index: 3;
+    padding: 20px 10px 70px 10px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.TxtHeaderselectingGameModeContainer {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.gameModes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phone, .computer {
+    width: 50px;
+    height: 50px;
+    background-color: #31572c;
+    color: #fff;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.computer {
+    box-shadow: 0 2px 10px #4f772d;
+}
+
+.fa-mobile-screen-button, .fa-computer {
+    font-size: 24px;
+}
+
+.modesContainer {
+    width: 90%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 300px;
+    height: 270px;
+    background-color: #31572c;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;    
+}
+
+.imgPVP {
+    width: 100%;
+    height: 57%;
+    background-image: url(./img/PVP.PNG);
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+    border-radius: 5px;   
+}
+
+.imgPVPTime {
+    width: 100%;
+    height: 57%;
+    background-image: url(./img/PVP.PNG);
+    background-size: cover;
+    background-position: center;
+    background-color: red;
+    border-radius: 5px;   
+}
+
+.TxtPVP {
+    font-size: 16px;
+    color: #fff;
+    align-self: flex-start;
+    margin-left: 10px;
+}
+
+.TxtPVPH {
+    font-size: 20px;
+}
+
+.start-game {
+    padding: 8px 36px;
+    border: none;
+    background-color: #4f772d;
+    color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    align-self: flex-end;
+}
+
+.cardModeGamePVP {
+    display: flex;
+}
+
+.cardModeGamePVPTime {
+    display: none;
+}
+
+.back {
+    align-self: flex-start;
+    cursor: pointer;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#backSettingsPlay {
+    margin-top: 20px;
+    margin-left: 20px;
+    position: absolute;
+}
+
+.mobileBtnContainer1 {
+    position: absolute;
+    top: 75%;
+    left: 85%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.topMobileBtnBox {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.bottomMobileBtnBox {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.arrowPlayer {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #132a13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.topMobileBtnBo2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.bottomMobileBtnBo2 {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.mobileBtnContainer2 {
+    position: absolute;
+    top: -1%;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playerPointContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
+.Player1NameSpan, .Player2NameSpan {
+    font-size: 18px;
+    color: #fff;
+}
+
+.settingGameBackgroundContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -200px;
+    margin-left: -250px;
+    background-color: #132a13;
+    width: 500px;
+    height: 400px;
+    z-index: 4;
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+#backsettingGameBackgroundContainer {
+    margin-top: 10px;
+    margin-left: 10px;
+    position: absolute;
+}
+
+.TxtsettingGameBackgroundContainer {
+    font-size: 20px;
+    color: #fff;
+    margin-top: 40px;
+}
+
+.settingGameBackground {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+.btnsettingGameBackgroundContainer {
+    padding: 8px 48px;
+    background-color: #31572c;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.backgroundFon {
+    width: 350px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+#backgroundAzersInput {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    display: flex;
+    cursor: pointer;
+}
+
+#background1 {
+    display: none;
+    background-image: url(./img/Background1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+#background2 {
+    display: none;
+    background-image: url(./img/Background2.png);
+    background-size: cover;
+    background-position: center;
+}
+#background3 {
+    display: none;
+    background-image: url(./img/Background3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#background4 {
+    display: none;
+    background-image: url(./img/Background4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#background5 {
+    display: none;
+    background-image: url(./img/Background5.jpg);
+    background-size: cover;
+    background-position: center;
+}
